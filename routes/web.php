@@ -18,7 +18,7 @@ Route::get('/', function () {
 Route::get('getip', function () {
     $ip = $_SERVER['REMOTE_ADDR'];
     
-    if( isLocalIp($ip)) {
+    if( !isPrivOrResIp($ip)) {
         $ip = '24.48.0.1';
     }
 
@@ -32,9 +32,8 @@ Route::get('getip', function () {
 
 });
 
-function isLocalIp($ip) {
-    if( strpos($ip, '192') === 0 || strpos($ip, '172') === 0 || strpos($ip, '10') === 0 || strpos($ip, '127') === 0) {
-        return true;
-    }
-    return false;
+function isPrivOrResIp($ip) {
+    return filter_var($ip,
+        FILTER_VALIDATE_IP,
+        FILTER_FLAG_IPV4 | FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE);    
 }
