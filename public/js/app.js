@@ -2155,8 +2155,8 @@ function failed() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Programmering\desenioCT\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\Programmering\desenioCT\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\Programmering\des-code-test\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\Programmering\des-code-test\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
