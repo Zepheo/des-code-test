@@ -8,7 +8,8 @@
 
 const axios = require('axios');
 
-const button = document.getElementById('button-text');
+const button = document.getElementById('button');
+const buttonText = document.getElementById('button-text');
 const loading = document.getElementById('loading');
 
 button.addEventListener('click', () => {
@@ -16,7 +17,7 @@ button.addEventListener('click', () => {
   axios.get('/getip')
     .then(({data}) => {
       stopLoading();
-      button.textContent = data;
+      buttonText.textContent = data;
     })
     .catch(() => {
       failed();
@@ -33,6 +34,6 @@ function stopLoading(){
 }
 
 function failed(){
-  button.textContent ="Request failed.";
+  buttonText.textContent ="Request failed.";
   stopLoading();
 }

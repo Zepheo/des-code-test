@@ -2109,14 +2109,15 @@ process.umask = function() { return 0; };
 // require('./bootstrap');
 var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 
-var button = document.getElementById('button-text');
+var button = document.getElementById('button');
+var buttonText = document.getElementById('button-text');
 var loading = document.getElementById('loading');
 button.addEventListener('click', function () {
   startLoading();
   axios.get('/getip').then(function (_ref) {
     var data = _ref.data;
     stopLoading();
-    button.textContent = data;
+    buttonText.textContent = data;
   })["catch"](function () {
     failed();
   });
@@ -2131,7 +2132,7 @@ function stopLoading() {
 }
 
 function failed() {
-  button.textContent = "Request failed.";
+  buttonText.textContent = "Request failed.";
   stopLoading();
 }
 
@@ -2155,8 +2156,8 @@ function failed() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Programmering\des-code-test\des-code-test\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\Programmering\des-code-test\des-code-test\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\Programmering\des-code-test\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\Programmering\des-code-test\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

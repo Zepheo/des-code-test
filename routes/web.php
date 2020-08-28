@@ -28,7 +28,7 @@ Route::get('getip', function () {
         return $result['country'];
     }
 
-    return response('Request Failed', 418);
+    return response('Request Failed', 404);
 
 });
 
